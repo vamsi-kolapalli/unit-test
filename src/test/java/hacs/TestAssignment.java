@@ -11,7 +11,7 @@ import java.util.GregorianCalendar;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-class AssignmentTest {
+class TestAssignment {
     Assignment assignment;
 
     @BeforeEach
@@ -20,19 +20,19 @@ class AssignmentTest {
     }
 
     @Test
-    void testingGetSuggestedSolution() {
+    void testGetSuggestedSolution() {
         Solution solution = new Solution();
         assignment.suggestedSolution = solution;
         assertEquals(assignment.getSuggestedSolution(), solution);
     }
 
     @Test
-    void testingGetSolutionIterator() {
+    void testGetSolutionIterator() {
         assertTrue(assignment.getSolutionIterator() instanceof SolutionIterator);
     }
 
     @Test
-    void testingIsOverDue() {
+    void testIsOverDue() {
         Date dueDate = new GregorianCalendar(2022, Calendar.MARCH, 20).getTime();
         assignment.setDueDate(dueDate);
         assertTrue(assignment.isOverDue());
@@ -42,29 +42,29 @@ class AssignmentTest {
     }
 
     @Test
-    void testingGetDueDateString() {
+    void testGetDueDateString() {
         DateFormat dateFormat = DateFormat.getDateInstance(DateFormat.SHORT);
         assignment.dueDate = new Date();
         assertEquals(assignment.getDueDateString(), dateFormat.format(new Date()));
     }
 
     @Test
-    void testingSetDueDate() {
+    void testSetDueDate() {
         Date today = new Date();
         assignment.setDueDate(today);
         assertEquals(today, assignment.dueDate);
     }
 
     @Test
-    void testingGetSolution() {
+    void testGetSolution() {
         Solution solution = new Solution();
-        solution.theAuthor = "suhas";
+        solution.theAuthor = "Vamsi_kolapalli";
         assignment.addSolution(solution);
-        assertEquals(solution, assignment.getSolution("suhas"));
+        assertEquals(solution, assignment.getSolution("Vamsi_kolapalli"));
     }
 
     @Test
-    void testingSetAssignmentSpec() {
+    void testSetAssignmentSpec() {
         assignment.setAssignmentSpec("STRING");
         assertEquals("STRING", assignment.assignmentSpec);
     }

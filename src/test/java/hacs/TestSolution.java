@@ -5,44 +5,44 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-class SolutionTest {
-	Solution solution;
+class TestSolution {
+    Solution solution;
 
-	@BeforeEach
-	void start() {
-		solution = new Solution();
-		solution.theAuthor = "suhas";
-		solution.solutionFileName = "sol.txt";
-		solution.theGrade = 1;
-		solution.reported = true;
-	}
+    @BeforeEach
+    void start() {
+        solution = new Solution();
+        solution.theAuthor = "vamsi_kolapalli";
+        solution.solutionFileName = "solution.txt";
+        solution.theGrade = 1;
+        solution.reported = true;
+    }
 
-	@Test
-	void testingGetGradeString() {
-		assertEquals(solution.getGradeString(), "1");
-		solution.reported = false;
-		assertEquals(solution.getGradeString(), "-1");
-	}
-	
-	@Test
-	void testingToString() {
-		assertEquals(solution.toString(), "suhas  sol.txt Grade=1  reported");
-	}
+    @Test
+    void testGetGradeString() {
+        assertEquals(solution.getGradeString(), "1");
+        solution.reported = false;
+        assertEquals(solution.getGradeString(), "-1");
+    }
 
-	@Test
-	void getGradeString() {
-		assertEquals(solution.getGradeString(), Integer.toString(solution.theGrade));
-	}
-	
-	@Test
-	void testingGetGradeInt() {
-		assertEquals(solution.getGradeInt(), solution.theGrade);
-	}
+    @Test
+    void testToString() {
+        assertEquals(solution.toString(), "vamsi_kolapalli  solution.txt Grade=1  reported");
+    }
 
-	@Test
-	void isReported() {
-		assertEquals(solution.isReported(), solution.reported);
-	}
+    @Test
+    void getGradeString() {
+        assertEquals(solution.getGradeString(), Integer.toString(solution.theGrade));
+    }
+
+    @Test
+    void testGetGradeInt() {
+        assertEquals(solution.getGradeInt(), solution.theGrade);
+    }
+
+    @Test
+    void isReported() {
+        assertEquals(solution.isReported(), solution.reported);
+    }
 
 
 }

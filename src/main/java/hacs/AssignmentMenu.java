@@ -1,4 +1,4 @@
-package org.example;
+package hacs;
 
 import javax.swing.JDialog;
 
@@ -12,10 +12,10 @@ import javax.swing.JDialog;
  */
 
 abstract public class AssignmentMenu extends JDialog {
-	abstract void ShowMenu(Assignment ass, Person per);
+    public AssignmentMenu() {
+        setModal(true);
+        setSize(575, 330);
+    }
 
-	public AssignmentMenu() {
-		setModal(true);
-		setSize(575, 330);
-	}
+    abstract void showMenu(Assignment ass, Person per);
 }
